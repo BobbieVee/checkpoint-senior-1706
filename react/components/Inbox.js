@@ -9,9 +9,9 @@ export default class extends React.Component {
         this.state = store.getState();
     }
 
-    componentDidMount(){
-        store.subscribe(() => this.setState(store.getState()))
-    }
+    // componentDidMount(){
+    //     store.subscribe(() => this.setState(store.getState()))
+    // }
 
     render() {
         const { messages } = this.state;

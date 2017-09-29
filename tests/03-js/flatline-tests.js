@@ -57,14 +57,14 @@ describe('▒▒▒ JavaScript tests ▒▒▒', function () {
                 ];
             });
 
-            xit('returns an object', () => {
+            it('returns an object', () => {
                 const returnValue = groupBy(users, user => user.age > 13);
                 expect(returnValue).to.be.an('object');
             });
 
             describe('returned object', () => {
 
-                xit('has keys that match return values from the iterator and the value of each key is an array of the elements that was the parameter when the key was returned', () => {
+                it('has keys that match return values from the iterator and the value of each key is an array of the elements that was the parameter when the key was returned', () => {
 
                     const returnValue = groupBy(users, user => {
                         if (user.age > 13) {
@@ -84,7 +84,7 @@ describe('▒▒▒ JavaScript tests ▒▒▒', function () {
 
                 });
 
-                xit('pulls and groups by specific property if a string is provided instead of a function', () => {
+                it('pulls and groups by specific property if a string is provided instead of a function', () => {
 
                     const returnValue = groupBy(users, 'state');
 
