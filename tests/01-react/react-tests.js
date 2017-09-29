@@ -342,7 +342,7 @@ describe('▒▒▒ React tests ▒▒▒', function () {
                 testingStore = createStore(rootReducer);
             });
 
-            xit('has an initial state as described', () => {
+            it('has an initial state as described', () => {
                 const currentStoreState = testingStore.getState();
                 // Our initial state has two properties as shown.
                 expect(currentStoreState.messagesLoading).to.be.equal(false);
@@ -353,7 +353,7 @@ describe('▒▒▒ React tests ▒▒▒', function () {
 
             describe('reducing on MESSAGES_LOADING', () => {
 
-                xit('affects state by setting messagesLoading to true and messages to empty array', () => {
+                it('affects state by setting messagesLoading to true and messages to empty array', () => {
 
                     // an action is dispatched…
                     testingStore.dispatch({
@@ -369,7 +369,7 @@ describe('▒▒▒ React tests ▒▒▒', function () {
 
                 });
 
-                xit('creates a NEW state object on any dispatched action', () => {
+                it('creates a NEW state object on any dispatched action', () => {
 
                     const currentStoreState = testingStore.getState();
 
@@ -396,7 +396,7 @@ describe('▒▒▒ React tests ▒▒▒', function () {
                     testingStore.replaceReducer(rootReducer);
                 });
 
-                xit('affects the state by setting messagesLoading to false and messages to dispatched messages', () => {
+                it('affects the state by setting messagesLoading to false and messages to dispatched messages', () => {
 
                     const randomMessages = testUtilities.createRandomMessages(10);
 
@@ -426,7 +426,7 @@ describe('▒▒▒ React tests ▒▒▒', function () {
                     );
                 });
 
-                xit('affects the state by appends dispatched message to state messages', () => {
+                it('affects the state by appends dispatched message to state messages', () => {
 
                     const dispatchedMessage = testUtilities.createOneRandomMessage();
 
@@ -445,7 +445,7 @@ describe('▒▒▒ React tests ▒▒▒', function () {
 
                 });
 
-                xit('sets messages to different array from previous state', () => {
+                it('sets messages to different array from previous state', () => {
 
                     const originalState = testingStore.getState();
                     const dispatchedMessage = testUtilities.createOneRandomMessage();
@@ -492,7 +492,7 @@ describe('▒▒▒ React tests ▒▒▒', function () {
                     // Where / how do you initialize local state? How do yuo
                     // get store state?
 
-                    xit('has an initial local state that reflects the current store state', () => {
+                    it('has an initial local state that reflects the current store state', () => {
                         const componentState = inboxWrapper.state();
                         expect(componentState.messagesLoading).to.be.false; // eslint-disable-line
                         expect(componentState.messages).to.be.deep.equal([]);

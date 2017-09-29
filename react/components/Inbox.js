@@ -6,9 +6,11 @@ export default class extends React.Component {
 
     constructor() {
         super();
-        this.state = {
-            messages: []
-        }
+        this.state = store.getState();
+    }
+
+    componentDidMount(){
+        store.subscribe(() => this.setState(store.getState()))
     }
 
     render() {
